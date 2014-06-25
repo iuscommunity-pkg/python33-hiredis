@@ -13,7 +13,7 @@ Name:           %{name}
 Version:        0.1.3
 Release:        1.ius%{?dist}
 Summary:        Python extension that wraps hiredis
-
+Vendor:         IUS Community Project
 Group:          Development/Languages
 License:        BSD
 URL:            http://pypi.python.org/pypi/hiredis
