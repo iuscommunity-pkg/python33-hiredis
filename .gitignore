@@ -2,4 +2,5 @@ SRPMS/*
 BUILD/*
 RPMS/*
 BUILDROOT/*
+MOCK/*
 SOURCES/*.tar.gz
