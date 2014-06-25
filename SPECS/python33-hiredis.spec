@@ -12,7 +12,7 @@
 Name:           %{name}
 Version:        0.1.3
 Release:        1.ius%{?dist}
-Summary:        Python extension that wraps hiredis
+Summary:        Python wrapper for hiredis
 Vendor:         IUS Community Project
 Group:          Development/Languages
 License:        BSD
@@ -23,7 +23,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  python%{pyver}-devel
 
 %description
-Python extension that wraps hiredis
+Python wrapper for hiredis
+
 
 %prep
 %setup -q -n %{upstream_name}-%{version}
