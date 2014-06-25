@@ -16,7 +16,7 @@ Summary:        Python wrapper for hiredis
 Vendor:         IUS Community Project
 Group:          Development/Languages
 License:        BSD
-URL:            http://pypi.python.org/pypi/hiredis
+URL:            https://github.com/redis/hiredis-py
 Source0:	http://pypi.python.org/packages/source/h/hiredis/%{upstream_name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
