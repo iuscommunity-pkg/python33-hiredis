@@ -9,7 +9,7 @@
 %global src %(echo %{srcname} | cut -c1)
 
 Name:           python%{iusver}-%{srcname}
-Version:        0.1.4
+Version:        0.1.5
 Release:        1.ius%{?dist}
 Summary:        Python wrapper for hiredis
 Vendor:         IUS Community Project
@@ -48,6 +48,9 @@ Python wrapper for hiredis
 
 
 %changelog
+* Mon Oct 06 2014 Ben Harper <ben.harper@rackspace.com> - 0.1.5-1.ius
+- Latest sources from upstream
+
 * Wed Jun 25 2014 Carl George <carl.george@rackspace.com> - 0.1.4-1.ius
 - Latest sources from upstream
 - Update vendor, summary, description, and url
