@@ -12,13 +12,10 @@ Name:           python%{iusver}-%{srcname}
 Version:        0.2.0
 Release:        1.ius%{?dist}
 Summary:        Python wrapper for hiredis
-Vendor:         IUS Community Project
-Group:          Development/Languages
 License:        BSD
 URL:            https://github.com/redis/hiredis-py
 Source0:        https://pypi.python.org/packages/source/%{src}/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRequires:  python%{iusver}-devel
-Requires:       python%{iusver}
 
 
 %description
@@ -37,12 +34,7 @@ Python wrapper for hiredis
 %{__python3} setup.py install --optimize 1 --skip-build --root %{buildroot}
 
 
-%clean
-%{__rm} -rf %{buildroot}
-
-
 %files
-%defattr(-,root,root,-)
 %doc COPYING
 %{python3_sitearch}/*
 
