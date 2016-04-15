@@ -10,6 +10,7 @@ License:        BSD
 URL:            https://github.com/redis/hiredis-py
 Source0:        https://pypi.python.org/packages/source/h/hiredis/hiredis-%{version}.tar.gz
 BuildRequires:  python%{ius_suffix}-devel
+BuildRequires:  python%{ius_suffix}-setuptools
 
 
 %description
@@ -36,6 +37,7 @@ Python wrapper for hiredis
 %changelog
 * Fri Apr 15 2016 Carl George <carl.george@rackspace.com> - 0.2.0-2.ius
 - Macro clean up
+- Build with setuptools, not distutils
 
 * Mon Apr 06 2015 Ben Harper <ben.harper@rackspace.com> - 0.2.0-1.ius
 - Latest upstream
