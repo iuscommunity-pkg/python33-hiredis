@@ -1,21 +1,15 @@
-%global pymajor 3
-%global pyminor 3
-%global pyver %{pymajor}.%{pyminor}
-%global iusver %{pymajor}%{pyminor}
-%global __python3 %{_bindir}/python%{pyver}
-%global python3_sitelib  %(%{__python3} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
-%global python3_sitearch %(%{__python3} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")
-%global srcname hiredis
-%global src %(echo %{srcname} | cut -c1)
+%global ius_suffix 33
+%global __python33 %{_bindir}/python3.3
+%global python33_sitearch %(%{__python33} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")
 
-Name:           python%{iusver}-%{srcname}
+Name:           python%{ius_suffix}-hiredis
 Version:        0.2.0
-Release:        1.ius%{?dist}
+Release:        2.ius%{?dist}
 Summary:        Python wrapper for hiredis
 License:        BSD
 URL:            https://github.com/redis/hiredis-py
-Source0:        https://pypi.python.org/packages/source/%{src}/%{srcname}/%{srcname}-%{version}.tar.gz
-BuildRequires:  python%{iusver}-devel
+Source0:        https://pypi.python.org/packages/source/h/hiredis/hiredis-%{version}.tar.gz
+BuildRequires:  python%{ius_suffix}-devel
 
 
 %description
@@ -23,23 +17,26 @@ Python wrapper for hiredis
 
 
 %prep
-%setup -q -n %{srcname}-%{version}
+%setup -q -n hiredis-%{version}
 
 
 %build
-%{__python3} setup.py build
+%{__python33} setup.py build
 
 
 %install
-%{__python3} setup.py install --optimize 1 --skip-build --root %{buildroot}
+%{__python33} setup.py install --optimize 1 --skip-build --root %{buildroot}
 
 
 %files
 %doc COPYING
-%{python3_sitearch}/*
+%{python33_sitearch}/hiredis*
 
 
 %changelog
+* Fri Apr 15 2016 Carl George <carl.george@rackspace.com> - 0.2.0-2.ius
+- Macro clean up
+
 * Mon Apr 06 2015 Ben Harper <ben.harper@rackspace.com> - 0.2.0-1.ius
 - Latest upstream
 
