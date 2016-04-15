@@ -14,7 +14,8 @@ BuildRequires:  python%{ius_suffix}-setuptools
 
 
 %description
-Python wrapper for hiredis
+Python extension that wraps protocol parsing code in hiredis. It primarily
+speeds up parsing of multi bulk replies.
 
 
 %prep
